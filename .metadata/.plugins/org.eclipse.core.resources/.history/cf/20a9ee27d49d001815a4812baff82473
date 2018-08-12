@@ -1,0 +1,16 @@
+package com.TransporationApplication.Register;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class RegisterDAOImpl implements RegisterDAO {
+
+	@Override
+	public boolean registerUser() {
+		return false;
+		
+	}
+
+	
+	
+}

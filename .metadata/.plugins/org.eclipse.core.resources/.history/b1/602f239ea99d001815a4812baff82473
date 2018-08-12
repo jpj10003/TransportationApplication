@@ -1,0 +1,14 @@
+package com.TransporationApplication.Login;
+
+public class LoginDAOImpl implements LoginDAO {
+
+	@Override
+	public boolean validateUser(String name, String password) {
+		
+		Session session = null;
+		
+		
+		return false;
+	}
+
+}

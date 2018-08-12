@@ -1,0 +1,7 @@
+package com.TransporationApplication.Register;
+
+public interface RegisterDAO {
+
+	public boolean registerUser();
+	
+}

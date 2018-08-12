@@ -1,0 +1,11 @@
+package com.TransporationApplication.Register;
+
+
+
+
+public interface RegisterService {
+
+	public String registerUser();
+	
+	
+}

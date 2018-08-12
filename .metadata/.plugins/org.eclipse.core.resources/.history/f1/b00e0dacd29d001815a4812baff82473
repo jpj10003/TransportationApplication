@@ -1,0 +1,9 @@
+package com.TransporationApplication.Register;
+
+import com.TransporationApplication.Login.User;
+
+public interface RegisterDAO {
+
+	public User registerUser();
+	
+}

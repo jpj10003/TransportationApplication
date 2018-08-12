@@ -1,0 +1,43 @@
+package com.TransporationApplication.Register;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.TransporationApplication.Login.User;
+
+@Controller
+public class RegisterController {
+
+	@Autowired
+	RegisterService reg;
+
+	@RequestMapping(value = "/register")
+	public String fwdToRegistrationPage() {
+
+		return "register";
+
+	}
+
+	@RequestMapping(value = "/register/user")
+	public String registerUser(
+			@RequestParam String fname, @RequestParam String lname, @RequestParam String email,
+			@RequestParam String password1,@requestParam String username ) {
+
+		User user= new User();
+		user.setFirstName(fname);
+		user.setLastName(lname);
+		user.setEmail(email);
+		user.setUserName(username);
+		user.setPassword(password1);
+		
+		if (reg.registerUser(user)) {
+			return "login";
+		} else {
+			return "register";
+		}
+
+	}
+
+}

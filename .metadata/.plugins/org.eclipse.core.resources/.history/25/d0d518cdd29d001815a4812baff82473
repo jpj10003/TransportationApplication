@@ -1,0 +1,8 @@
+package com.TransporationApplication.Login;
+
+import org.springframework.ui.ModelMap;
+
+public interface LoginDAO {
+
+	public User validateUser(String name, String password);
+}

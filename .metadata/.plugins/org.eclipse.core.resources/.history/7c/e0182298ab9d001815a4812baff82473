@@ -1,0 +1,19 @@
+package com.TransporationApplication.Login;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+//Tell Spring to create this.
+@Service
+public class LoginServiceImpl implements LoginService {
+	
+	@Autowired
+	private LoginDAO loginDAO;
+	
+	public boolean validateUser(String user, String password) {
+		
+		loginDAO.validateUser(user, password);
+		 
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.TransporationApplication.Register;
+
+public class RegisterDAOImpl implements RegisterDAO {
+
+	@Override
+	public boolean registerUser() {
+		return false;
+		
+	}
+
+	
+	
+}

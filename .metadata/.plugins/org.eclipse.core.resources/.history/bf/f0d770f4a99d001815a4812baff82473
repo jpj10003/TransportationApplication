@@ -1,0 +1,48 @@
+package com.TransporationApplication.Login;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+public class LoginDAOImpl implements LoginDAO {
+
+	private Session session;
+	
+	private Transaction transaction;
+	
+	public Session openCurrentSession()
+	{
+		session = getSessionFactory().openSession();
+		return session;
+	}
+	
+	public Session openSessionwithTransaction(){
+		session = getSessionFactory().openSession();
+		transaction = session.beginTransaction();
+		return session;
+	}
+	
+	private static SessionFactory getSessionFactory(){
+		Configuration configuration = new Configuration().configure();
+		StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder()
+				.applySettings(configuration.getProperties());
+		SessionFactory sessionFactory = configuration.buildSessionFactory(builder.build());
+		return sessionFactory;
+	}
+	
+	
+	
+	
+	@Override
+	public boolean validateUser(String name, String password) {
+		
+		
+		return false;
+	
+		
+	}
+	
+
+}

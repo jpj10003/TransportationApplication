@@ -1,0 +1,31 @@
+package com.TransporationApplication.Register;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class RegisterController {
+
+	@Autowired
+	RegisterService reg;
+
+	@RequestMapping(value = "/register")
+	public String fwdToRegistrationPage() {
+
+		return "register";
+
+	}
+
+	@RequestMapping(value = "/register/user")
+	public String registerUser() {
+
+		if (reg.registerUser()) {
+			return "login";
+		} else {
+			return "register";
+		}
+
+	}
+
+}
