@@ -1,0 +1,5 @@
+package com.TransporationApplication.Scheduler;
+
+public interface SchedulerService {
+
+}

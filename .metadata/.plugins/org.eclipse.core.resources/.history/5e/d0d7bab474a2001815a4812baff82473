@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Yahoo!!</title>
+</head>
+<body>
+	Welcome ${name}, your password is ${password}.
+	<br>
+	<table>
+		<tr>
+		<td>
+			<a href = "/schedule">Schedule a Ride </a>
+			
+		<td>
+		
+		</tr>
+	</table>
+
+</body>
+</html>

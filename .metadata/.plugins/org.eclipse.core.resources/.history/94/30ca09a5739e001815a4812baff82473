@@ -1,0 +1,53 @@
+package com.TransporationApplication.Login;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class LoginController {
+
+	@Autowired
+	LoginService loginService;
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	// @ResponseBody
+	public String showLoginPage() {
+		/*
+		 * return "<b>Hello World </b>" + "<br> <h1> Testing </h1>" + "";
+		 */
+		return "login";
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	// @ResponseBody
+	public String handleLoginRequest( @RequestParam String name, @RequestParam String password,
+			ModelMap model) {
+		/*
+		 * return "<b>Hello World </b>" + "<br> <h1> Testing </h1>" + "";
+		 */
+		List<User> user = null;
+		user = loginService.validateUser(name,password);
+		
+		if(!user.isEmpty())
+		{
+			String firstName = user.get(0).getFirstName();
+			System.out.println(name);
+			model.put("name", firstName);
+			model.put("password", password);
+			System.out.println(password);
+			return "welcome";
+		}
+		else {
+			model.put("errorMessage", "Username or Password is incorrect");
+			return "login";
+		}
+		
+	}
+
+}

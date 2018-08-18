@@ -1,0 +1,14 @@
+package com.TransporationApplication.Login;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+//Tell Spring to create this.
+
+public interface LoginService {
+	public List<User> validateUser(String user, String password);
+		//return user.equalsIgnoreCase("in28Minutes") && password.equals("dummy");
+	
+
+}

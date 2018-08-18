@@ -1,0 +1,12 @@
+package com.TransporationApplication.Scheduler;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SchedulerController {
+
+	 public String fwdToSchedulerPage(){
+		 return "schedulerPage"
+	 }
+	
+}
